@@ -7,6 +7,6 @@ def clean_data(df):
     return df
 
 if __name__ == "__main__":
-    raw = pd.read_csv(r"C:\Users\Evita\Downloads\Atividade3\storytelling-dados-grupo7\data\raw\netflix_titles.csv")
+    raw = pd.read_csv(r"C:\Users\carol\Documents\GitHub\storytelling-dados-grupo7\data\raw\netflix_titles.csv")
     cleaned = clean_data(raw)
-    cleaned.to_csv(r"C:\Users\Evita\Downloads\Atividade3\storytelling-dados-grupo7\data\processed\netflix_clean.csv", index=False)
+    cleaned.to_csv(r"C:\Users\carol\Documents\GitHub\storytelling-dados-grupo7\data\processed\netflix_clean.csv", index=False)

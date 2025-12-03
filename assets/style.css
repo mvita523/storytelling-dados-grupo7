@@ -1,0 +1,151 @@
+/* --------------------- Global --------------------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------- Container Principal --------------------- */
+.main-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* --------------------- Título --------------------- */
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #E50914; 
+}
+
+/* --------------------- Filtros --------------------- */
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.filter-box {
+    flex: 1 1 250px;
+    background-color: #1E1E1E;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+/* --------------------- KPIs --------------------- */
+.kpi-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.kpi-card {
+    background-color: #1E1E1E;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+    flex: 1 1 200px;
+    min-width: 200px;
+}
+
+/* --------------------- Gráficos --------------------- */
+.graphs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.graph-box {
+    background-color: #1E1E1E;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+}
+
+/* --------------------- Tabela --------------------- */
+#table_results {
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+/* Celulas da tabela */
+#table_results .dash-cell {
+    color: #ffffff;
+    background-color: #1E1E1E;
+}
+
+/* Cabeçalho da tabela */
+#table_results .dash-header {
+    background-color: #2A2A2A;
+    color: #ffffff;
+    font-weight: bold;
+    border-bottom: 2px solid #E50914;
+}
+
+/* --------------------- Insights --------------------- */
+.insights {
+    background-color: #1E1E1E;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+    margin-bottom: 50px;
+}
+
+.insights h3 {
+    color: #E50914;
+    margin-bottom: 10px;
+}
+
+.insights p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* --------------------- Responsividade --------------------- */
+@media (max-width: 768px) {
+    .filters-container, 
+    .kpi-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .graph-box {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* --------------------- Dropdowns --------------------- */
+.Select-control, .Select-menu-outer, .Select-placeholder, .Select-value {
+    background-color: #1E1E1E !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    border: 1px solid #2A2A2A !important;
+}
+
+/* --------------------- RangeSlider --------------------- */
+.rc-slider, .rc-slider-rail, .rc-slider-track, .rc-slider-handle {
+    background-color: #1E1E1E !important;
+}
+
+.rc-slider-track {
+    background-color: #E50914 !important;
+}
+
+.rc-slider-handle {
+    border: 2px solid #E50914 !important;
+    background-color: #E50914 !important;
+}
