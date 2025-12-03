@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.express as px
 
-df = pd.read_csv(r"C:\Users\Evita\Downloads\Atividade3\storytelling-dados-grupo7\data\raw\netflix_clean.csv")
+df = pd.read_csv(r"C:\Users\Evita\Downloads\Atividade3\storytelling-dados-grupo7\data\processed\netflix_clean.csv")
 
 
 # Filmes vs Séries

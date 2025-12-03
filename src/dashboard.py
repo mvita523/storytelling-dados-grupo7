@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 
 # --------- Ajuste o caminho se for diferente no seu PC ---------
-CSV_PATH = r"C:\Users\Evita\Downloads\Atividade3\storytelling-dados-grupo7\data\raw\netflix_clean.csv"
+CSV_PATH = r"C:\Users\Evita\Downloads\Atividade3\storytelling-dados-grupo7\data\processed\netflix_clean.csv"
 # ----------------------------------------------------------------
 
 # Carregar dataset (com fallback de erro claro)
