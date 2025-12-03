@@ -1,0 +1,9 @@
+# Bibliotecas necessárias
+
+
+```txt
+pandas
+numpy
+plotly
+dash
+dash-bootstrap-components
