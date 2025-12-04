@@ -1,97 +1,102 @@
-#  Storytelling da Netflix – Análise e Insights dos dados estudados pelo Grupo7
-
-##  Introdução
-
-A Netflix é uma das maiores plataformas de streaming do mundo, com um catálogo que se renova a cada ano. Este projeto analisa um dataset do Kaggle contendo informações sobre filmes e séries disponíveis globalmente.
-
-O objetivo é identificar padrões, tendências e características relevantes do catálogo, utilizando storytelling visual através de dashboards interativos.
-
----
-
-##  Perguntas de Investigação
-
-1. Como evoluiu o número de títulos ao longo dos anos?
+Storytelling – Análise dos Dados da base escolhida da Netflix
+ 
+# Introdução
+ 
+A Netflix tornou-se um titã notável no universo global do streaming.
+ 
+Esta análise explora um dataset público do Kaggle sobre títulos disponiveis no seu catálogo global:
+ 
+Título da produção audiovisual.
+Tipo (Filme ou Série).
+País de produção.
+Ano de lançamento.
+Gêneros.
+Duração.
+Resumo.
+ 
+O propósito é descobrir tendências e apresentar insights sobre a evolução da plataforma.
+ 
+ 
+# Perguntas de Investigação
+ 
+1. Quantos títulos foram lançados ao longo dos anos?
 2. Filmes são mais comuns que séries? Em que proporção?
-3. Quais são os géneros mais frequentes no catálogo?
-4. Quais países mais aparecem nas produções disponíveis?
-5. Como diferentes filtros influenciam os resultados?
-6. Existem padrões claros ao selecionar um único género?
-
----
-
-## 📊 Insights Principais
-
-### 🔹 1. Crescimento ao longo do tempo  
-O número de lançamentos aumenta de forma evidente após 2015, com um pico notável entre 2018 e 2020.  
-Isso coincide com a expansão internacional da plataforma e a produção massiva de conteúdo original.
-
-### 🔹 2. Filmes vs Séries  
-Os dados demonstram que:
-- **Filmes representam cerca de 65% a 70%**
-- **Séries representam cerca de 30%**
-
-Apesar disso, a produção de séries cresceu muito nos últimos anos.
-
-### 🔹 3. Géneros mais populares  
-Entre os géneros mais comuns destacam-se:
-- Documentaries  
-- Stand-Up Comedy  
-- Dramas  
-- International TV Shows  
-- Comedies  
-
-Quando filtramos por um género específico, como "Anime" ou "Action & Adventure", os padrões de países e anos mudam significativamente.
-
-### 🔹 4. Países mais frequentes  
-Os países com mais títulos são:
+3. Quais são os géneros mais populares?
+4. Como a distribuição de géneros e tipos varia ao longo do tempo?
+5. Qual país aparece mais frequentemente nos títulos?
+6. O que muda quando filtramos por um único género?
+ 
+ 
+# Insights Obtidos
+ 
+# 1. Evolução de títulos ao longo do tempo
+ 
+O número de títulos cresce significativamente a partir de 2015, coincidindo com a expansão global da Netflix.
+ 
+> Insight:2018 e 2019 são os anos com mais lançamentos.
+ 
+ 
+# 2. Filmes vs Séries
+ 
+Os dados mostram que:
+ 
+- **Filmes representam 70% do catálogo.
+- **TV Shows representam 30%.
+ 
+> Insight: A Netflix começou com foco maior em filmes, expandindo séries mais recentemente.
+ 
+ 
+# 3. Géneros mais recorrentes
+ 
+O top 5 géneros é:
+ 
+1. Documentaries  
+2. Stand-Up Comedy  
+3. Dramas  
+4. International TV Shows  
+5. Comedies  
+ 
+> Insight: Conteúdos internacionais e comédia têm grande peso na biblioteca.
+ 
+ 
+# 4. Países mais frequentes
+ 
 1. Estados Unidos  
 2. Índia  
 3. Reino Unido  
-4. Canadá  
+4. Canada  
 5. Japão  
-
-A predominância norte-americana não surpreende, mas a Índia tem uma presença extremamente forte.
-
-### 🔹 5. Efeito dos Filtros  
-- Filtrar por um género reduz os dados e revela nichos junto ao país e tipo.  
-- Para géneros como *Anime Series*, há clara predominância do Japão e foco em séries.  
-- Filtros de anos mostram que géneros como *Stand-Up Comedy* cresceram mais recentemente.
-
----
-
-##  Conclusões
-
-- O catálogo da Netflix cresceu rapidamente nos últimos 10 anos.  
-- Filmes ainda são maioria, mas a produção de séries tem aumentado significativamente.  
-- Os géneros mais comuns são voltados para conteúdos documentais e comédia.  
-- A presença de países fora dos EUA (como Índia e Reino Unido) reforça a globalização da plataforma.  
-- O dashboard permite análises dinâmicas e descobertas personalizadas.
-
----
-
-##  Limitações
-
-- O dataset não contém dados de visualizações ou popularidade.
-- Alguns títulos têm valores em branco, como país.
-- Alguns géneros podem ter sobreposição ou nomenclaturas inconsistentes.
-- A coluna `listed_in` depende de limpeza adequada.
-
----
-
-##  Trabalhos Futuros
-
-- Criar recomendações automáticas com Machine Learning.  
-- Construir análises de texto das descrições usando NLP.  
-- Criar mapas interativos com a distribuição dos países.  
-- Adicionar novas métricas, como duração média por género.  
-- Integrar dados sobre avaliações (IMDb, Rotten Tomatoes).  
-
----
-
-##  Nota Final
-
-Este storytelling complementa o dashboard, permitindo uma análise intuitiva, visual e explicativa do conteúdo da Netflix.  
-A combinação de gráficos, filtros e insights torna o projeto útil tanto do ponto de vista académico quanto analítico.
-
-
-Atenciosamente, equipa 7: André Costa, Caroline Costa e Maria Vita
+ 
+> Insight: A predominância norte-americana é evidente, mas a Índia aparece com força.
+ 
+# 5. Filtrando por um género específico
+ 
+Por exemplo, ao selecionar Anime, observamos:
+ 
+- Maior produção no Japão.
+- Aumento após 2016.
+- Séries dominam sobre filmes.
+ 
+ 
+# Conclusões
+ 
+- O catálogo da Netflix cresce rapidamente após 2015.
+- Filmes ainda são maioria, mas séries têm aumentado.
+- Há grande diversidade geográfica, indicando expansão global.
+- “Documentaries” e “Stand-Up Comedy” aparecem com frequência surpreendente.
+- O dashboard permite explorar qualquer género e obter insights personalizados.
+ 
+ 
+# Limitações
+ 
+- Dataset não inclui número de visualizações.
+- Países podem estar em branco para vários títulos.
+- Géneros são amplos e podem conter sobreposições.
+ 
+ 
+# Trabalho Futuro
+ 
+- Adicionar recomendação de títulos via Machine Learning.
+- Agrupar géneros semelhantes com NLP.
+- Mapear países em visualizações geográficas interativas.
+- Criar ranking de popularidade baseado em duração / género / ano.

@@ -1,7 +1,5 @@
-# Bibliotecas necessárias
-
-
-```txt
+# Bibliotecas necessárias para o projeto:
+plotly.express
 pandas
 numpy
 plotly
