@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ambiente virtual
+venv/
+.env/
+env/
+
+# Ficheiros do sistema
+.DS_Store
+Thumbs.db
+
+# Dados
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Cache
+.cache/
+.ipynb_checkpoints/
+
+# Output
+*.log
