@@ -64,67 +64,90 @@ def create_dashboard(app):
     app.layout = html.Div(
         className="main-container",
         children=[
-            html.H1("Dashboard Netflix", className="title"),
-
-            # --------------------- Filtros ---------------------
+            # --------------------- Logo e Grupo ---------------------
             html.Div(
-                className="filters-container",
+                style={"textAlign": "center", "marginBottom": "20px"},
                 children=[
-                    html.Div([
-                        html.Label("Gênero"),
-                        dcc.Dropdown(
-                            id="genre_filter",
-                            options=[{"label": g, "value": g} for g in genres],
-                            placeholder="Escolha um género",
-                            multi=False
-                        )
-                    ], className="filter-box"),
-
-                    html.Div([
-                        html.Label("Tipo"),
-                        dcc.Dropdown(
-                            id="type_filter",
-                            options=[{"label": t, "value": t} for t in types],
-                            placeholder="Movie ou TV Show",
-                            multi=False
-                        )
-                    ], className="filter-box"),
-
-                    html.Div([
-                        html.Label("Ano de lançamento"),
-                        dcc.RangeSlider(
-                            id="year_filter",
-                            min=year_min,
-                            max=year_max,
-                            value=[year_min, year_max],
-                            marks=year_marks,
-                            tooltip={"placement": "bottom", "always_visible": False}
-                        )
-                    ], className="filter-box"),
+                    html.Img(src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+                             style={"height": "60px"}),
+                    html.H5("Grupo 7", style={"color": "#E50914", "marginTop": "5px"})
                 ]
             ),
 
-            html.Br(),
+            html.H1("Dashboard Netflix", className="title", style={"textAlign": "center"}),
+
+            # --------------------- Card com Gênero, Tipo e Ano ---------------------
+            html.Div(
+                style={"display": "flex", "justifyContent": "space-between", "gap": "20px", "marginBottom": "20px"},
+                children=[
+                    html.Div(
+                        style={"flex": "1", "backgroundColor": "#2A2A2A", "padding": "20px", "borderRadius": "10px"},
+                        children=[
+                            html.Div(
+                                style={"display": "flex", "gap": "20px"},
+                                children=[
+                                    html.Div([
+                                        html.Label("Gênero"),
+                                        dcc.Dropdown(
+                                            id="genre_filter",
+                                            options=[{"label": g, "value": g} for g in genres],
+                                            placeholder="Escolha um gênero",
+                                            multi=False
+                                        )
+                                    ], style={"flex": "1"}),
+
+                                    html.Div([
+                                        html.Label("Tipo"),
+                                        dcc.Dropdown(
+                                            id="type_filter",
+                                            options=[{"label": t, "value": t} for t in types],
+                                            placeholder="Movie ou TV Show",
+                                            multi=False
+                                        )
+                                    ], style={"flex": "1"}),
+                                ]
+                            ),
+                            html.Div([
+                                html.Label("Ano de lançamento"),
+                                dcc.RangeSlider(
+                                    id="year_filter",
+                                    min=year_min,
+                                    max=year_max,
+                                    value=[year_min, year_max],
+                                    marks=year_marks,
+                                    tooltip={"placement": "bottom", "always_visible": True}
+                                )
+                            ], style={"marginTop": "20px"})
+                        ]
+                    )
+                ]
+            ),
 
             # --------------------- KPIs ---------------------
             html.Div(
                 className="kpi-container",
+                style={"display": "flex", "justifyContent": "space-around", "gap": "20px", "marginBottom": "20px"},
                 children=[
-                    html.Div(id="kpi_total", className="kpi-card"),
-                    html.Div(id="kpi_movies", className="kpi-card"),
-                    html.Div(id="kpi_tvshows", className="kpi-card"),
+                    html.Div(id="kpi_total", className="kpi-card", style={"flex": "1", "textAlign": "center",
+                                                                          "backgroundColor": "#2A2A2A",
+                                                                          "padding": "20px", "borderRadius": "10px"}),
+                    html.Div(id="kpi_movies", className="kpi-card", style={"flex": "1", "textAlign": "center",
+                                                                           "backgroundColor": "#2A2A2A",
+                                                                           "padding": "20px", "borderRadius": "10px"}),
+                    html.Div(id="kpi_tvshows", className="kpi-card", style={"flex": "1", "textAlign": "center",
+                                                                            "backgroundColor": "#2A2A2A",
+                                                                            "padding": "20px", "borderRadius": "10px"}),
                 ]
             ),
-
-            html.Br(),
 
             # --------------------- Gráficos ---------------------
             html.Div(
                 className="graphs-container",
+                style={"display": "flex", "flexWrap": "wrap", "gap": "20px"},
                 children=[
-                    dcc.Graph(id="graph_year", className="graph-box"),
-                    dcc.Graph(id="graph_genres", className="graph-box"),
-                    dcc.Graph(id="graph_type_pie", className="graph-box"),
+                    dcc.Graph(id="graph_year", className="graph-box", style={"flex": "1", "minWidth": "300px"}),
+                    dcc.Graph(id="graph_genres", className="graph-box", style={"flex": "1", "minWidth": "300px"}),
+                    dcc.Graph(id="graph_type_pie", className="graph-box", style={"flex": "1", "minWidth": "300px"}),
                 ]
             ),
 
@@ -159,8 +182,9 @@ def create_dashboard(app):
 
             html.Br(),
 
-            # --------------------- Insights ---------------------
-            html.Div(id="insights_box", className="insights")
+            # --------------------- Insights em quadradinhos ---------------------
+            html.Div(id="insights_box", className="insights",
+                     style={"display": "flex", "gap": "20px", "flexWrap": "wrap"})
         ]
     )
 
@@ -193,9 +217,9 @@ def create_dashboard(app):
         movies = len(f[f["type"] == "Movie"])
         tvshows = len(f[f["type"] == "TV Show"])
         return (
-            html.Div([html.H4("Total de títulos"), html.P(f"{total}")]),
-            html.Div([html.H4("Filmes"), html.P(f"{movies}")]),
-            html.Div([html.H4("Séries"), html.P(f"{tvshows}")])
+            html.Div([html.H4("Total de títulos"), html.H2(f"{total}")]),
+            html.Div([html.H4("Filmes"), html.H2(f"{movies}")]),
+            html.Div([html.H4("Séries"), html.H2(f"{tvshows}")])
         )
 
     @app.callback(
@@ -209,7 +233,7 @@ def create_dashboard(app):
         if f.empty:
             return px.histogram(title="Títulos por ano (sem dados)")
         valid = f[f["release_year"] >= 0]
-        fig = px.histogram(valid, x="release_year", nbins=40, title="Títulos por ano", 
+        fig = px.histogram(valid, x="release_year", nbins=40, title="Títulos por ano",
                            color_discrete_sequence=["#B0B0B0"])
         fig.update_layout(
             paper_bgcolor='#121212',
@@ -256,13 +280,7 @@ def create_dashboard(app):
         f = filter_data(selected_genre, selected_type, year_range)
         type_counts = f["type"].value_counts().reset_index()
         type_counts.columns = ["type", "count"]
-        # Definir cores personalizadas: metade cinza, metade vermelho
-        colors = []
-        for t in type_counts["type"]:
-            if t.lower() == "movie":
-                colors.append("#B0B0B0")  # cinza
-            else:
-                colors.append("#E50914")  # vermelho
+        colors = ["#B0B0B0" if t.lower() == "movie" else "#E50914" for t in type_counts["type"]]
         fig = px.pie(type_counts, names="type", values="count", title="Distribuição: Filmes vs Séries",
                      color_discrete_sequence=colors)
         fig.update_layout(
@@ -294,12 +312,18 @@ def create_dashboard(app):
         f = filter_data(selected_genre, selected_type, year_range)
         if len(f) == 0:
             return html.Div([html.H3("Insights"), html.P("Nenhum título encontrado com os filtros selecionados.")])
+        
         top_country = f["country"].mode()[0] if not f["country"].mode().empty else "N/A"
         top_year = int(f.loc[f["release_year"] >= 0, "release_year"].mode()[0]) \
             if not f.loc[f["release_year"] >= 0, "release_year"].mode().empty else "N/A"
-        return html.Div([
-            html.H3("Insights"),
-            html.P(f"País com mais títulos no filtro: {top_country}"),
-            html.P(f"Ano mais comum: {top_year}"),
-            html.P(f"Número total de títulos: {len(f)}")
-        ])
+        total_titles = len(f)
+
+        # Quadradinhos de insights
+        return [
+            html.Div([html.H4("País com mais títulos"), html.H3(f"{top_country}")],
+                     style={"flex": "1", "backgroundColor": "#2A2A2A", "padding": "15px", "borderRadius": "10px", "textAlign": "center"}),
+            html.Div([html.H4("Ano mais comum"), html.H3(f"{top_year}")],
+                     style={"flex": "1", "backgroundColor": "#2A2A2A", "padding": "15px", "borderRadius": "10px", "textAlign": "center"}),
+            html.Div([html.H4("Número total de títulos"), html.H3(f"{total_titles}")],
+                     style={"flex": "1", "backgroundColor": "#2A2A2A", "padding": "15px", "borderRadius": "10px", "textAlign": "center"})
+        ]
