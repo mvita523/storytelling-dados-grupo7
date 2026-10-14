@@ -1,66 +1,66 @@
-# Dashboard Netflix – Storytelling com Dados
- 
-Este projeto foi desenvolvido no contexto da UFCD — utilizando Python, Pandas, Plotly, Dash e Git/GitHub — para criar um Dashboard Interativo da Netflix baseado num dataset do Kaggle.
- 
-O objetivo principal é analisar tendências de filmes e séries disponíveis na plataforma, explorando padrões de género, anos de lançamento, popularidade e diferenças entre filmes e séries.
- 
- 
-# Estrutura do Projeto
- 
-storytelling-dados-grupo7/
-│── README.md
-│── requirements.txt
-│── .gitignore
-│── assets/
-│ └── style.css
-│── data/
-│ ├── raw/
-│ └── processed/
-│── src/
-│ ├── fetch_data.py
-│ ├── cleaning.py
-│ ├── analysis.py
-│ └── dashboard.py
-│── docs/
-│ └── storytelling.md
-└── app.py
- 
-# Funcionalidades do Dashboard
- 
-- Filtros interativos:
-  - Género
-  - Tipo (Movie / TV Show)
-  - Ano de lançamento (slider)
-- Gráficos:
-  - Títulos por ano (histograma)
-  - Distribuição de géneros
-  - Filmes vs Séries (gráfico de pizza)
-- KPIs:
-  - Total de títulos filtrados
-  - Quantidades de filmes
-  - Quantidades de séries
-- Tabela interativa com pesquisa
-- Painel automático de insights
- 
- 
-# Como executar
- 
-1. Instale as dependências:
-Verificar os dados
-Execute o script de limpeza:
-Executar o dashboard
-Abrir no navegador no link que se vai gerar
+# 🎬 Dashboard Netflix: Storytelling com Dados
 
+Dashboard interativo que analisa as **8 800+ produções** do catálogo da Netflix (dataset público do Kaggle) para responder a perguntas de negócio sobre a evolução da plataforma.
 
-Funcionalidades do Dashboard
+> Projeto de grupo, desenvolvido na formação em Análise de Dados (IEFP Porto).
+> Autores: **Maria Vita**, Caroline Costa e André Costa.
 
-Filtros interativos
-Indicadores (KPIs)
-Gráficos
+<!-- Adicionar aqui uma captura do dashboard: ![Dashboard](docs/dashboard.png) -->
 
-Dataset escolhido pelo grupo foi: Netflix Movies and TV Shows
+## ❓ Perguntas de análise
 
+1. Quantos títulos foram lançados ao longo dos anos?
+2. Há mais filmes ou mais séries, e em que proporção?
+3. Quais são os géneros mais populares?
+4. Como variam os géneros e os tipos de conteúdo ao longo do tempo?
+5. Que países produzem mais títulos?
 
-Grupo 7: Maria Vita, Caroline Costa e André Costa
+## 💡 Principais conclusões
 
+| Conclusão | Detalhe |
+|---|---|
+| **Os filmes dominam o catálogo** | ~70% filmes vs ~30% séries |
+| **O crescimento acelera a partir de 2015** | 2018 e 2019 são os anos com mais lançamentos, em linha com a expansão global da Netflix |
+| **Os conteúdos internacionais e a comédia têm grande peso** | O top 5 de géneros é: Documentários, Stand-Up Comedy, Dramas, International TV Shows e Comédias |
 
+A análise completa está em [`docs/storytelling.md`](docs/storytelling.md).
+
+## 📊 Funcionalidades do dashboard
+
+- **Filtros:** género, tipo (filme/série) e intervalo de anos
+- **KPIs:** total de títulos, número de filmes e número de séries
+- **Gráficos:** títulos por ano, distribuição de géneros e filmes vs séries
+- **Tabela** interativa com pesquisa
+- **Painel de insights** que se atualiza com os filtros
+
+## 🛠 Tecnologias
+
+Python · pandas · NumPy · Plotly · Dash · Dash Bootstrap Components · Git/GitHub
+
+## 🗂 Estrutura
+
+```
+├── app.py               # Ponto de entrada da aplicação
+├── src/
+│   ├── cleaning.py      # Limpeza e tratamento dos dados
+│   ├── analysis.py      # Cálculos e agregações
+│   └── dashboard.py     # Layout e interatividade (callbacks)
+├── data/
+│   ├── raw/             # Dados originais (Kaggle)
+│   └── processed/       # Dados tratados
+├── assets/style.css     # Estilos do dashboard
+└── docs/storytelling.md # Narrativa e conclusões
+```
+
+## ▶️ Como executar
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
+
+Depois, abra `http://127.0.0.1:8050` no navegador.
+
+## 📁 Fonte dos dados
+
+[Netflix Movies and TV Shows (Kaggle)](https://www.kaggle.com/datasets/shivamb/netflix-shows)
